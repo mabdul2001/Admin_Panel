@@ -45,15 +45,15 @@ export const userInputs = [
   export const productInputs = [
     {
       id: 1,
-      label: "Title",
+      label: "Name",
       type: "text",
-      placeholder: "Apple Macbook Pro",
+      placeholder: "Enter Admin Name",
     },
     {
       id: 2,
-      label: "Description",
+      label: "Username",
       type: "text",
-      placeholder: "Description",
+      placeholder: "admin",
     },
     {
       id: 3,
@@ -74,4 +74,21 @@ export const userInputs = [
       placeholder: "in stock",
     },
   ];
-  
+  export const profileValue = [
+    {
+      id: 1,
+      label: "Name",
+      value: "Admin"
+    },
+    {
+      id: 2,
+      label: "Email",
+      value: "admin@admin.com"
+    },
+    {
+      id: 3,
+      label: "Phone",
+      value: "+923112487542"
+    },
+    
+  ]

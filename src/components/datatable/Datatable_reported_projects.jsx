@@ -41,8 +41,14 @@ const Datatable_reported_projects = () => {
   };
   
   const columns = [
-    { field: "applicantId", headerName: "Applicant", width: 200 },
-    { field: "reportedProjectId", headerName: "Reported Project", width: 200 },
+    { field: "applicantId", headerName: "Applicant", width: 200,
+  renderCell: (params) => (
+    <div>{params.value?.fullName}</div>
+  ) },
+    { field: "reportedProjectId", headerName: "Reported Project", width: 200,
+  renderCell: (params) => (
+    <div>{params.value?.projectName}</div>
+  ) },
     { field: "message", headerName: "Message", width: 250 },
     {
       field: "createdAt",

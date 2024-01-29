@@ -11,52 +11,52 @@ const List = () => {
   const rows = [
     {
       id: 1143155,
-      product: "Acer Nitro 5",
+      product: "Internet Of Things",
       img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "John Smith",
       date: "1 March",
       amount: 785,
-      method: "Cash on Delivery",
+      method: "Coming Soon",
       status: "Approved",
     },
     {
       id: 2235235,
-      product: "Playstation 5",
+      product: "Blockchain",
       img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Michael Doe",
       date: "1 March",
       amount: 900,
-      method: "Online Payment",
+      method: "Coming Soon",
       status: "Pending",
     },
     {
       id: 2342353,
-      product: "Redragon S101",
+      product: "Artificial Intelligence",
       img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "John Smith",
       date: "1 March",
       amount: 35,
-      method: "Cash on Delivery",
+      method: "Coming Soon",
       status: "Pending",
     },
     {
       id: 2357741,
-      product: "Razer Blade 15",
+      product: "Micro Chips",
       img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Jane Smith",
       date: "1 March",
       amount: 920,
-      method: "Online",
+      method: "Coming Soon",
       status: "Approved",
     },
     {
       id: 2342355,
-      product: "ASUS ROG Strix",
+      product: "Smart Security System",
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Harold Carol",
       date: "1 March",
       amount: 2000,
-      method: "Online",
+      method: "Coming Soon",
       status: "Pending",
     },
   ];
@@ -65,10 +65,10 @@ const List = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell">Tracking ID</TableCell>
-            <TableCell className="tableCell">Product</TableCell>
-            <TableCell className="tableCell">Customer</TableCell>
-            <TableCell className="tableCell">Date</TableCell>
+            <TableCell className="tableCell">Project ID</TableCell>
+            <TableCell className="tableCell">Title</TableCell>
+            <TableCell className="tableCell">Investors</TableCell>
+            <TableCell className="tableCell">Launch Date</TableCell>
             <TableCell className="tableCell">Amount</TableCell>
             <TableCell className="tableCell">Payment Method</TableCell>
             <TableCell className="tableCell">Status</TableCell>

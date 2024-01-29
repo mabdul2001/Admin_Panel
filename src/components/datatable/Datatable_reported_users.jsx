@@ -49,13 +49,23 @@ const Datatable_reported_users = () => {
     setUserRows(userRows.filter((item) => item._id !== id));
   };
   // Assuming you have some state and functions to manage the users in your component
-// const [users, setUsers] = useState([...]);
+  // const [users, setUsers] = useState([...]);
 
 
 
   const columns = [
-    { field: "applicantId", headerName: "Applicant", width: 200 },
-    { field: "reportedUserId", headerName: "Reported User", width: 200 },
+    {
+      field: "applicantId", headerName: "Applicant", width: 200,
+      renderCell: (params) => (
+        <div>{params.value?.fullName ?? ""}</div>
+      )
+    },
+    {
+      field: "reportedUserId", headerName: "Reported User", width: 200,
+      renderCell: (params) => (
+        <div>{params.value?.fullName ?? ""}</div>
+      )
+    },
     { field: "message", headerName: "Message", width: 250 },
     {
       field: "createdAt",
@@ -81,20 +91,20 @@ const Datatable_reported_users = () => {
       headerName: "Action",
       width: 200,
       renderCell: (params) => {
-        
+
         return (
           <div className="cellAction">
             <div
-              
+
             >
-              
+
             </div>
           </div>
         );
       },
     },
-    
-    
+
+
   ];
 
   return (

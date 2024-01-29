@@ -1,23 +1,29 @@
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import BlockRoundedIcon from '@mui/icons-material/BlockRounded';
+import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
+import InterestsRoundedIcon from '@mui/icons-material/InterestsRounded';
+import Datatable_projects from "../datatable/Datatable_projects";
+import { Link } from 'react-router-dom';
 
 const Widget = ({ type }) => {
   let data;
 
   //temporary
-  const amount = 100;
-  const diff = 20;
+  const amount = 9;
+  const diff = 2;
 
   switch (type) {
     case "user":
       data = {
         title: "USERS",
         isMoney: false,
-        link: "See all users",
+        link: (
+          <Link to="/users">
+            View Users
+          </Link>
+        ),
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -31,11 +37,15 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "PROJECTS",
         isMoney: false,
-        link: "View all orders",
+        link: (
+          <Link to="/products">
+            View all projects
+          </Link>
+        ),
         icon: (
-          <ShoppingCartOutlinedIcon
+          <AccountTreeOutlinedIcon
             className="icon"
             style={{
               backgroundColor: "rgba(218, 165, 32, 0.2)",
@@ -47,11 +57,15 @@ const Widget = ({ type }) => {
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
+        title: "INTERESTS",
         isMoney: true,
-        link: "View net earnings",
+        link: (
+          <Link to="/add-interest">
+            View Interests
+          </Link>
+        ),
         icon: (
-          <MonetizationOnOutlinedIcon
+          <InterestsRoundedIcon
             className="icon"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
@@ -60,11 +74,15 @@ const Widget = ({ type }) => {
       break;
     case "balance":
       data = {
-        title: "BALANCE",
+        title: "BLOCKED PROJECTS",
         isMoney: true,
-        link: "See details",
+        link: (
+          <Link to="/blocked_users">
+            View Blocked Projects
+          </Link>
+        ),
         icon: (
-          <AccountBalanceWalletOutlinedIcon
+          <BlockRoundedIcon
             className="icon"
             style={{
               backgroundColor: "rgba(128, 0, 128, 0.2)",
@@ -83,7 +101,7 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.isMoney && ""} {amount} 
         </span>
         <span className="link">{data.link}</span>
       </div>

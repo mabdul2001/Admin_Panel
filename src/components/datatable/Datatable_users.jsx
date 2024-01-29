@@ -96,10 +96,11 @@ const handleBlock = async (userId,status) => {
       headerName: "Pic",
       width: 200,
       renderCell: (params) => (
-        <img
+        <img 
+        crossOrigin="anonymous"
           src={params.value ? ("https://fyp-ubit-backend.onrender.com/api/images/" + params.value) : ''}
           alt="Image"
-          style={{ width: '100%', height: 'auto' }}
+          style={{ width: '50px',margin: '15px auto', height: 'auto' }}
         />
       ),
     },

@@ -13,27 +13,38 @@ import BlockOutlinedIcon from '@mui/icons-material/BlockOutlined';
 import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
+  
+  const handleLogout = () => {
+    // Remove "token" from localStorage
+    window.localStorage.removeItem("token");
+
+    // Redirect to "/login"
+    window.location.href="/login";
+  };
   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">Admin Gateway</span>
+          <span className="logo">InvestIn Admin</span>
         </Link>
       </div>
       <hr />
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
+          <Link to="/">
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </li>
+          </Link>
+          
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
@@ -47,34 +58,36 @@ const Sidebar = () => {
               <span>Projects</span>
             </li>
           </Link>
-          <li>
-            <InterestsOutlinedIcon className="icon" />
-            <span>Interest</span>
-          </li>
+          <Link to="/add-interest" style={{ textDecoration: "none" }}>
+            <li>
+              <InterestsOutlinedIcon className="icon" />
+              <span>Interest</span>
+            </li>
+          </Link>
           <Link to="/reported_users" style={{ textDecoration: "none" }}>
-          <li>
-            <ReportGmailerrorredOutlinedIcon className="icon" />
-            <span>Reported Users</span>
-          </li>
+            <li>
+              <ReportGmailerrorredOutlinedIcon className="icon" />
+              <span>Reported Users</span>
+            </li>
           </Link>
           <Link to="/reported_projects" style={{ textDecoration: "none" }}>
-          <li>
-            <ReportProblemOutlinedIcon className="icon" />
-            <span>Reported Projects</span>
-          </li>
+            <li>
+              <ReportProblemOutlinedIcon className="icon" />
+              <span>Reported Projects</span>
+            </li>
           </Link>
           <p className="title">BLOCK</p>
           <Link to="/blocked_users" style={{ textDecoration: "none" }}>
-          <li>
-            <BlockOutlinedIcon className="icon" />
-            <span>Blocked Users</span>
-          </li>
+            <li>
+              <BlockOutlinedIcon className="icon" />
+              <span>Blocked Users</span>
+            </li>
           </Link>
           <Link to="/blocked_projects" style={{ textDecoration: "none" }}>
-          <li>
-            <RemoveCircleOutlineOutlinedIcon className="icon" />
-            <span>Blocked Projects</span>
-          </li>
+            <li>
+              <RemoveCircleOutlineOutlinedIcon className="icon" />
+              <span>Blocked Projects</span>
+            </li>
           </Link>
           {/* <p className="title">SERVICE</p>
           <li>
@@ -94,10 +107,12 @@ const Sidebar = () => {
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li> */}
-          <li>
-            <ExitToAppIcon className="icon" />
-            <span>Logout</span>
-          </li>
+          <Link to="#" onClick={handleLogout}>
+            <li>
+              <ExitToAppIcon className="icon" />
+              <span>Logout</span>
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="bottom">

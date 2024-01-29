@@ -77,9 +77,10 @@ const Datatable_projects = () => {
       width: 200,
       renderCell: (params) => (
         <img
+        crossOrigin="anonymous"
           src={params.value && params.value.length > 0 ? ("https://fyp-ubit-backend.onrender.com/api/images/" + params.value[1]) : ''}
           alt="Image"
-          style={{ width: '100%', height: 'auto' }}
+          style={{ width: '50px',margin:'auto', height: 'auto' }}
         />
       ),
     },
